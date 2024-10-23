@@ -13,13 +13,21 @@ def encode(password):
 
 
 def decode(password):
-    pass
+    decoded_password = ""
+    for x in password:
+        for _ in range(3):
+            if x == "0":
+                x = "9"
+            else:
+                x = str(int(x) - 1)
+        decoded_password += x
+    return decoded_password
 
 
 if __name__ == "__main__":
     while True:
-        print("Encode")
-        print ("Decode")
+        print("1. Encode")
+        print ("2. Decode")
         selection = int(input("Menu Selection: "))
 
         if selection == 1:
